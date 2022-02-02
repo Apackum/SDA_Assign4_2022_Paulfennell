@@ -5,13 +5,15 @@
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/listText"
     android:fillViewport="true"
     tools:context=".Settings">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/setting_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
 
 
         <EditText
@@ -21,9 +23,15 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Borrower Name"
+            android:hint="@string/borrower_name"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#BABABA"
+            android:textColorHighlight="#ECDCDC"
+            android:textColorHint="#EFF3F4"
+            android:textColorLink="#F4EAEA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,24 +42,42 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+
+
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Borrower ID"
+            android:hint="@string/borrower_id"
             android:inputType="number"
+            android:minHeight="48dp"
+
+            android:textColor="#BABABA"
+            android:textColorHighlight="#ECDCDC"
+            android:textColorHint="#EFF3F4"
+            android:textColorLink="#F4EAEA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <EditText
             android:id="@+id/email"
+
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Email address"
+            android:hint="@string/email_address"
             android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textColor="#BABABA"
+            android:textColorHighlight="#ECDCDC"
+            android:textColorHint="#EFF3F4"
+            android:textColorLink="#F4EAEA"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userName" />
@@ -60,36 +86,42 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:text="Save Details"
+            android:background="@color/listText"
+            android:text="@string/save_details"
+            android:textColor="#E8E6E6"
+            android:textColorHighlight="#E80C0C"
+            android:textColorHint="#E40808"
+            android:textColorLink="#E81010"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/button2"
             app:layout_constraintTop_toBottomOf="@+id/borrowerID" />
 
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="124dp"
-            android:layout_height="43dp"
+            android:layout_height="48dp"
             android:layout_marginTop="36dp"
-            android:text="Remember my information"
+            android:background="#F1EBEB"
+            android:text="@string/remember_my_information"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/borrowerID" />
 
-        <TextView
-            android:id="@+id/t2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="362dp" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="117dp"
+            android:layout_height="50dp"
             android:layout_marginTop="4dp"
-            android:text="Reset/Clear"
+            android:background="#090206"
+            android:text="@string/reset_clear"
+            android:textColor="@color/tabSelect"
+            android:textColorHint="#E31D1D"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.783"
             app:layout_constraintStart_toEndOf="@+id/checkBox"

@@ -31,6 +31,8 @@ package com.example.SDA_ASSIGNMENT4_PAULFENNELL;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
 
+        import com.bumptech.glide.Glide;
+
         import java.util.ArrayList;
 
 
@@ -39,57 +41,8 @@ package com.example.SDA_ASSIGNMENT4_PAULFENNELL;
  */
 public class LibraryViewAdapter extends RecyclerView.Adapter<LibraryViewAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
-    private Context mNewContext;
 
-    //add array for each item\
-    private ArrayList<String> mAuthor;
-    private ArrayList<String> mTitle;
-    private ArrayList<Integer> mImageID;
-
-    LibraryViewAdapter(Context mNewContext, ArrayList<String> author, ArrayList<String> title, ArrayList<Integer> imageId) {
-        this.mNewContext = mNewContext;
-        this.mAuthor = author;
-        this.mTitle = title;
-        this.mImageID = imageId;
-
-    }
-
-    //declare methods
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_list_item, viewGroup, false);
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
-        Log.d(TAG, "onBindViewHolder: was called");
-
-        viewHolder.authorText.setText(mAuthor.get(position));
-        viewHolder.titleText.setText(mTitle.get(position));
-        viewHolder.imageItem.setImageResource(mImageID.get(position));
-
-        //should check here to see if the book is available.
-        viewHolder.checkOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Toast.makeText(mNewContext, mTitle.get(position), Toast.LENGTH_SHORT).show();
-                //...
-                Intent myOrder = new Intent (mNewContext, CheckOut.class);
-                mNewContext.startActivity(myOrder);
-            }
-        });
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return mAuthor.size();
-    }
-
-    //view holder class for recycler_list_item.xml
-    class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageItem;
         TextView authorText;
@@ -105,8 +58,67 @@ public class LibraryViewAdapter extends RecyclerView.Adapter<LibraryViewAdapter.
             authorText = itemView.findViewById(R.id.authorText);
             titleText = itemView.findViewById(R.id.bookTitle);
             checkOut = itemView.findViewById(R.id.out_button);
-            itemParentLayout = itemView.findViewById(R.id.listItemLayout);
-
         }
     }
+    private Context mNewContext;
+    private ArrayList<books> bookList;
+
+    public LibraryViewAdapter(Context mNewContext, ArrayList<books> bookList) {
+        this.mNewContext = mNewContext;
+        this.bookList = bookList;
+    }
+
+    //declare methods
+    @NonNull
+    @Override
+    public LibraryViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_list_item, parent, false);
+        return new ViewHolder(view);
+    }
+
+
+
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+        Log.d(TAG, "onBindViewHolder: was called");
+        //TextViews
+        viewHolder.authorText.setText(bookList.get(position).getAuthor());
+        viewHolder.titleText.setText(bookList.get(position).getTitle());
+        //Imageview : Glide library
+        Glide.with(mNewContext)
+                .load(bookList.get(position).getImageUrl())
+                .into(viewHolder.imageItem);
+
+                //should check here to see if the book is available.
+        viewHolder.checkOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myOrder = new Intent(mNewContext, CheckOut.class);
+                mNewContext.startActivity(myOrder);
+            }
+        });
+
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return bookList.size();
+    }
 }
+//view holder class for recycler_list_item.xml
+
+//    //add array for each item\
+//    private ArrayList<String> mAuthor;
+//    private ArrayList<String> mTitle;
+//    private ArrayList<Integer> mImageID;
+
+
+/*    LibraryViewAdapter(Context mNewContext, ArrayList<String> author, ArrayList<String> title, ArrayList<Integer> imageId) {
+        this.mNewContext = mNewContext;
+        this.mAuthor = author;
+        this.mTitle = title;
+        this.mImageID = imageId;
+
+    }*/

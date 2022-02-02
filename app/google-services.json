@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "59590059244",
+    "firebase_url": "https://sda-ass-4-paul-fennell-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sda-ass-4-paul-fennell",
+    "storage_bucket": "sda-ass-4-paul-fennell.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59590059244:android:19269ad0c0ead606d531c9",
+        "android_client_info": {
+          "package_name": "com.example.sdaassign4_2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59590059244-jglk70bbvt96n0kks8dg6ld55d37q89f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP2_HiBAUob8RRS4roYZoM7qkZ9czEGsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59590059244-jglk70bbvt96n0kks8dg6ld55d37q89f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
