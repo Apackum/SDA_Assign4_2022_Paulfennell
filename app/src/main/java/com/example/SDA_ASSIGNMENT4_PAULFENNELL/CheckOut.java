@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -40,6 +41,7 @@ public class CheckOut extends AppCompatActivity {
                 mDateAndTime.set(Calendar.MONTH, monthOfYear);
                 mDateAndTime.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 updateDateAndTimeDisplay();
+                Log.d("check", "onDateSet: ");
             }
         };
 
@@ -56,5 +58,6 @@ public class CheckOut extends AppCompatActivity {
         CharSequence SelectedDate = DateUtils.formatDateTime(this, mDateAndTime.getTimeInMillis(), DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_SHOW_YEAR);
         String finalSummary = SelectedDate + " current time is " + currentTime;
         mDisplaySummary.setText(finalSummary);
+        Log.d("check1", "updateDateAndTimeDisplay: ");
     }
 }

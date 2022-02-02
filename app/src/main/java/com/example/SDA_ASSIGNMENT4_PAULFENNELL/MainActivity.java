@@ -9,11 +9,14 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 /*
- * @author Chris Coughlan 2019
+ * @author Paul Fennell 2022
  */
 public class MainActivity extends AppCompatActivity {
+    // for use with firebase analytics
     private FirebaseAnalytics mFirebaseAnalytics;
+
     public static final int BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT = 1;
+
     ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

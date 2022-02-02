@@ -1,7 +1,7 @@
 package com.example.SDA_ASSIGNMENT4_PAULFENNELL;
 public class books  {
 
-    // Model Class
+    // Model Class for firebase
     String author;
     String title;
     String image;

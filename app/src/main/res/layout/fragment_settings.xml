@@ -13,7 +13,7 @@
         android:id="@+id/setting_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
+        android:background="#333232">
 
 
         <EditText
@@ -89,9 +89,9 @@
 
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:background="@color/listText"
+            android:background="#FFFFFF"
             android:text="@string/save_details"
-            android:textColor="#E8E6E6"
+            android:textColor="#000000"
             android:textColorHighlight="#E80C0C"
             android:textColorHint="#E40808"
             android:textColorLink="#E81010"
@@ -104,9 +104,9 @@
             android:layout_width="124dp"
             android:layout_height="48dp"
             android:layout_marginTop="36dp"
-            android:background="#F1EBEB"
             android:text="@string/remember_my_information"
 
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,9 +118,9 @@
             android:layout_width="117dp"
             android:layout_height="50dp"
             android:layout_marginTop="4dp"
-            android:background="#090206"
+            android:background="#FDFDFD"
             android:text="@string/reset_clear"
-            android:textColor="@color/tabSelect"
+            android:textColor="#000000"
             android:textColorHint="#E31D1D"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.783"

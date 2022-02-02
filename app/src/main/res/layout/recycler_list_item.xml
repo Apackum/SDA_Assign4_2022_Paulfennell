@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:padding="15dp"
-    android:id="@+id/listItemLayout">
+    android:id="@+id/listItemLayout"
+    android:background="#333232">>
 
     <ImageView
         android:id="@+id/bookImage"
         android:layout_width="92dp"
         android:layout_height="129dp"
-        android:contentDescription="@string/images_desc"
-        />
+        android:contentDescription="@string/images_desc" />
 
     <TextView
         android:id="@+id/authorText"
@@ -19,9 +19,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/bookImage"
-        android:text="@string/plc_author"
         android:textAlignment="textStart"
-        android:textColor="@color/listText"
+        android:textColor="#FFFFFF"
         android:textSize="17sp" />
 
     <TextView
@@ -32,9 +31,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/bookImage"
-        android:text="@string/plc_title"
         android:textAlignment="center"
-        android:textColor="@color/listText"
+        android:textColor="#FFFFFF"
         android:textSize="17sp"
         android:textStyle="italic" />
 
