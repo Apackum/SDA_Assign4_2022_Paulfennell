@@ -16,4 +16,7 @@
     <string name="save_details">Save Details</string>
     <string name="remember_my_information">Remember my information</string>
     <string name="reset_clear">Reset/Clear</string>
+    <string name="please_feel_free_to_browse_the_current_selection">Please feel free to browse the availible selection</string>
+    <string name="online_bookshop_for_assignment">Online bookshop for assignment</string>
+    <string name="online_bookshop" />
 </resources>
